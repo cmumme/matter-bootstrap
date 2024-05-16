@@ -7,10 +7,8 @@ export default class MatterHotReload {
 	private readonly systemsByModule: Map<ModuleScript, AnySystem> = new Map()
 	private firstRunSystems?: AnySystem[] = [ ]
 
-	public constructor(
-        private readonly loop: GameLoop,
-        private readonly systemContainer: Folder
-	) { }
+	private loop!: GameLoop
+	private systemContainer!: Folder
 
 	// https://eryn.io/matter/docs/Guides/HotReloading#set-up-rewire
 	private hotReloadCallback(module: ModuleScript, context: Context) {
@@ -42,7 +40,10 @@ export default class MatterHotReload {
 		this.systemsByModule.delete(dyingModule)
 	}
 
-	public setupHotReload() {
+	public setupHotReload(loop: GameLoop, systemContainer: Folder) {
+		this.loop = loop
+		this.systemContainer = systemContainer
+
 		this.hotReloader.scan(
 			this.systemContainer,
 			(...args) => this.hotReloadCallback(...args),

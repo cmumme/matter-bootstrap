@@ -1,17 +1,13 @@
 import { ContextActionService, RunService } from "@rbxts/services"
-import type { GameLoop } from "."
 import { Debugger } from "@rbxts/matter"
 import Plasma from "@rbxts/plasma"
+import type { GameLoop } from "."
 
 export default class MatterDebugger {
 	public readonly debugger = new Debugger(Plasma)
 
-	public constructor(
-        private readonly loop: GameLoop
-	) { }
-
-	public setupDebugger(debuggerKeycode: Enum.KeyCode) {
-		this.debugger.autoInitialize(this.loop)
+	public setupDebugger(loop: GameLoop, debuggerKeycode: Enum.KeyCode) {
+		this.debugger.autoInitialize(loop)
 
 		if(!RunService.IsClient()) return
 
