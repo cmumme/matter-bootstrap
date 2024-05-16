@@ -42,8 +42,6 @@ export default function componentsReplicateSystemFactory(components: ComponentLi
 				for (const [entityId, record] of world.queryChanged(component)) {
 					const entityStringId = tostring(entityId) // have to convert number to string in order to send via remote
 					const componentName = tostring(component)
-	
-					print(record)
 
 					diff[entityStringId] ??= {}
 	
