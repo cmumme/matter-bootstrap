@@ -20,6 +20,11 @@ export interface MatterConfiguration {
 	debuggerKeycode: Enum.KeyCode
 }
 
+/**
+ * A simple class that handles everything needed to bootstrap a Matter world
+ * including hot-reloading, live debug, networking,
+ * and component replication.
+ */
 export default class MatterBootstrap {
 	public readonly world = new World()
 	private readonly loop: GameLoop = new Loop()
@@ -29,6 +34,13 @@ export default class MatterBootstrap {
 	private readonly systems: AnySystem[]
 	private readonly routes: RouteList
 
+	/**
+	 * Creates a new MatterBootstrap class and starts the game loop
+	 * 
+	 * @param systemContainer The Folder instance your system scripts are contained in. Recursive.
+	 * @param components A class containing your Matter components as static fields.
+	 * @param configuration The configuration options to use for this Matter setup.
+	 */
 	public constructor(
 		private readonly systemContainer: Folder,
 		private readonly components: ComponentList | any,
