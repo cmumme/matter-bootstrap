@@ -45,9 +45,9 @@ export default function componentsReplicateSystemFactory(components: ComponentLi
 
 					diff[entityStringId] ??= {}
 	
-					if(!world.contains(entityId as AnyEntity) && record.new !== undefined) continue
+					if(!world.contains(entityId) && record.new !== undefined) continue
 	
-					diff[entityStringId][componentName] = { data: record.new as AnyComponent }
+					diff[entityStringId][componentName] = { data: record.new }
 				}
 			})
 	

@@ -14,11 +14,11 @@ export type ComponentList = Record<string, (...args: any[]) => AnyComponent>
 export const replicatedComponentsIn = (components: ComponentList) => {
 	const replicatedComponents = { } as ComponentList
 
-	for (const [componentKey, component] of Object.entries(components) as [string, any]) {
-		const isReplicated = Reflect.getMetadata(REPLICATED_METADATA_KEY, components, componentKey as string) as boolean
+	for (const [componentKey, component] of Object.entries(components)) {
+		const isReplicated = Reflect.getMetadata(REPLICATED_METADATA_KEY, components, componentKey)
 		if(!isReplicated) continue
 	
-		replicatedComponents[componentKey as string] = component
+		replicatedComponents[componentKey] = component
 	}
 
 	return replicatedComponents
