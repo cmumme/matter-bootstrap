@@ -1,11 +1,3 @@
-/*
-	MatterBootstrapper.ts
-	@author typechecked
-	@date 5/12/2024
-
-	A simple class that handles everything needed to bootstrap a Matter world including hot-reloading, live debug, networking, and component replication
-*/
-
 import { Loader } from "@rbxts/loader"
 import { Loop, AnySystem, World } from "@rbxts/matter"
 import { Widgets } from "@rbxts/plasma"
