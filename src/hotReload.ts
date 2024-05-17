@@ -7,13 +7,8 @@ export default class MatterHotReload {
 	private readonly systemsByModule: Map<ModuleScript, AnySystem> = new Map()
 	private firstRunSystems?: AnySystem[] = [ ]
 
-	public constructor(
-        private readonly loop: GameLoop,
-        private readonly systemContainer: Folder
-	) { }
-
 	// https://eryn.io/matter/docs/Guides/HotReloading#set-up-rewire
-	private hotReloadCallback(module: ModuleScript, context: Context) {
+	private hotReloadCallback(loop: GameLoop, module: ModuleScript, context: Context) {
 		const originalModule = context.originalModule
 		const originalSystem = this.systemsByModule.get(originalModule)
 		const [success, newSystem] = pcall(require, module) as LuaTuple<[boolean, AnySystem]> // Make sure the module doesn't throw
@@ -23,33 +18,33 @@ export default class MatterHotReload {
 		if(this.firstRunSystems) // Pool systems on the first run so they can be scheduled one-shot
 			this.firstRunSystems.push(newSystem)
 		else if(originalSystem) // System already loaded, have to replace
-			this.loop.replaceSystem(originalSystem, newSystem)
+			loop.replaceSystem(originalSystem, newSystem)
 		else // It is a new system, simply schedule it
-			this.loop.scheduleSystem(newSystem)
+			loop.scheduleSystem(newSystem)
 		
 		this.systemsByModule.set(originalModule, newSystem)
 	}
 
 	// https://eryn.io/matter/docs/Guides/HotReloading#set-up-rewire
-	private hotReloadCleanup(_: ModuleScript, context: Context) {
+	private hotReloadCleanup(loop: GameLoop, _: ModuleScript, context: Context) {
 		if(context.isReloading) return // We only want to clean up if it's being removed entirely, not reloaded
 
 		const dyingModule = context.originalModule
 		const dyingSystem = this.systemsByModule.get(dyingModule)
 		if(!dyingSystem) return
 
-		this.loop.evictSystem(dyingSystem)
+		loop.evictSystem(dyingSystem)
 		this.systemsByModule.delete(dyingModule)
 	}
 
-	public setupHotReload() {
+	public setupHotReload(loop: GameLoop, systemContainer: Folder) {
 		this.hotReloader.scan(
-			this.systemContainer,
-			(...args) => this.hotReloadCallback(...args),
-			(...args) => this.hotReloadCleanup(...args)
+			systemContainer,
+			(...args) => this.hotReloadCallback(loop, ...args),
+			(...args) => this.hotReloadCleanup(loop, ...args)
 		)
 		if(!this.firstRunSystems) throw "firstRunSystems is undefined. Cannot fully setup hot reload."
-		this.loop.scheduleSystems(this.firstRunSystems)
+		loop.scheduleSystems(this.firstRunSystems)
 		this.firstRunSystems = undefined
 	}
 }
