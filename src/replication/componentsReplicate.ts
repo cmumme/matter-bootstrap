@@ -3,8 +3,8 @@ import Object from "@rbxts/object-utils"
 import { Widgets } from "@rbxts/plasma"
 import { Players } from "@rbxts/services"
 import { Route } from "@rbxts/yetanothernet"
-import { MATTER_REPLICATION_ROUTE_NAME } from "../constants"
-import { ComponentList, replicatedComponentsIn } from "../utils"
+import { MATTER_REPLICATION_ROUTE_NAME, REPLICATED_METADATA_KEY } from "../constants"
+import { ComponentList, decoratedComponentsIn } from "../utils"
 import { EntityPayload, WorldPayload } from "./payloads"
 
 export default function componentsReplicateSystemFactory(components: ComponentList) {
@@ -14,7 +14,7 @@ export default function componentsReplicateSystemFactory(components: ComponentLi
 			if(!routes) throw "No routes passed to the componentsReplicate system! Cannot proceed"
 	
 			const worldReplicationRoute = routes[MATTER_REPLICATION_ROUTE_NAME]
-			const replicatedComponents = replicatedComponentsIn(components)
+			const replicatedComponents = decoratedComponentsIn(components, REPLICATED_METADATA_KEY)
 	
 			// Replicate the entire world to new players
 			for (const [_, player] of useEvent(Players, "PlayerAdded")) {
