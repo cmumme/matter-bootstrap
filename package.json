@@ -1,6 +1,6 @@
 {
   "name": "@rbxts/matter-bootstrap",
-  "version": "1.3.9",
+  "version": "1.3.10",
   "main": "out/init.lua",
   "author": {
     "name": "typechecked",

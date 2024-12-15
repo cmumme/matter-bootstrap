@@ -29,7 +29,7 @@ export default class MatterBootstrapper {
 	private readonly debugger: MatterDebugger
 	private readonly replication: MatterReplication
 	private readonly loop: GameLoop = new Loop()
-	private readonly widgets!: Widgets
+	private readonly widgets: Widgets
 	private readonly systems: AnySystem[]
 
 	public constructor(
@@ -42,17 +42,17 @@ export default class MatterBootstrapper {
 		debuggerKeycode = Enum.KeyCode.BackSlash
 	) {
 		this.systems = Loader.Load(this.systemContainer)
+
+		this.debugger = new MatterDebugger()
+		this.widgets = this.debugger.debugger.getWidgets()
 		this.loop = new Loop(this.world, this.widgets, this.routes)
 
 		this.collectionService = new MatterCollectionService(this.world, this.components)
 		this.hotReload = new MatterHotReload(this.loop, this.systemContainer)
 		this.replication = new MatterReplication(this.loop, this.routes, this.components)
-		this.debugger = new MatterDebugger(this.loop)
-
-		this.widgets = this.debugger.debugger.getWidgets()
 		
 		enableHotReload ? this.hotReload.setupHotReload() : this.loop.scheduleSystems(this.systems)
-		enableDebugger && this.debugger.setupDebugger(debuggerKeycode)
+		enableDebugger && this.debugger.setupDebugger(this.loop, debuggerKeycode)
 		enableReplication ? this.replication.setupReplication() : Net.start(this.loop, this.routes)
 
 		this.loop.begin(RunService.IsServer() ? {
