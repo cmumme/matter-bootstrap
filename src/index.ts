@@ -51,6 +51,8 @@ export default class MatterBootstrapper {
 		this.hotReload = new MatterHotReload(this.loop, this.systemContainer)
 		this.replication = new MatterReplication(this.loop, this.routes, this.components)
 		
+		this.loop.setWorlds(this.world)
+
 		enableHotReload ? this.hotReload.setupHotReload() : this.loop.scheduleSystems(this.systems)
 		enableDebugger && this.debugger.setupDebugger(this.loop, debuggerKeycode)
 		enableReplication ? this.replication.setupReplication() : Net.start(this.loop, this.routes)

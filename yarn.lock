@@ -117,10 +117,9 @@
   resolved "https://registry.yarnpkg.com/@rbxts/matter/-/matter-0.8.3.tgz#8e66517a64d4bdc95e69e2fce41d145ed2277d22"
   integrity sha512-lJlNZXq6UuR6e/gGWWIU6ssn73+SuiRLwwSnOSYnpv5ajaq0L5g4N3BEyXjXXoXUEPNN1U3kWLqTkwjYKRjIGQ==
 
-"@rbxts/matter@^0.8.1":
-  version "0.8.1"
-  resolved "https://registry.yarnpkg.com/@rbxts/matter/-/matter-0.8.1.tgz#0004d573022c171ab5fb5cfe40f90ab7f8abd495"
-  integrity sha512-z/fnJ/rdzxDW78XkI9L5u5kqymsdagzCYbgmE1K8TZGWmPBEFDkRic6uljYoxBl7qSMHzEnFrZQCI+daQ/FQow==
+"@rbxts/matter@https://github.com/matter-ecs/matter-types.git#d37078c":
+  version "0.8.5"
+  resolved "https://github.com/matter-ecs/matter-types.git#d37078ce9b4eb6171f46acbe0c0fca55472a640c"
 
 "@rbxts/object-utils@^1.0.4":
   version "1.0.4"

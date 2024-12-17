@@ -1,6 +1,6 @@
 {
   "name": "@rbxts/matter-bootstrap",
-  "version": "1.3.10",
+  "version": "1.4.0",
   "main": "out/init.lua",
   "author": {
     "name": "typechecked",
@@ -37,7 +37,7 @@
     "@rbxts/experimental-reflect": "^1.0.0",
     "@rbxts/gameutil": "^1.1.1",
     "@rbxts/loader": "^2.1.1",
-    "@rbxts/matter": "^0.8.1",
+    "@rbxts/matter": "https://github.com/matter-ecs/matter-types.git#d37078c",
     "@rbxts/matter-sync": "^0.0.22",
     "@rbxts/object-utils": "^1.0.4",
     "@rbxts/plasma": "^0.4.5",
