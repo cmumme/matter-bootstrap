@@ -1,25 +1,44 @@
 # @rbxts/matter-bootstrap
-A simple class that handles everything needed to bootstrap a Matter world including hot-reloading, live debug, networking (using ``@rbxts/yetanothernet``), and component replication.
+Handles everything to setup Matter. Includes a versatile plugins system to enable any mix of these functions:
+- Hot-reloading
+- Networking (using ``@rbxts/yetanothernet``)
+- Component replication
+- Matter debugger
+- ...and more! You can create your own plugins as seen in the [example game](examples/hello-world/)
 
+## Code examples
+See the [example game](examples/hello-world/) for more details
 ```ts
-// server/index.ts
-import { ServerStorage } from "@rbxts/services"
-import MatterBootstrap from "@rbxts/matter-bootstrap"
-import { Components } from "shared/components"
+// server/bootstrap.server.ts
+import { ServerScriptService } from "@rbxts/services"
+import { Game } from "@rbxts/matter-bootstrap"
+import PlayerEntities from "shared/plugins/PlayerEntities"
 
-new MatterBootstrap(ServerStorage.MatterSystems, Components)
+// A simple game with one system and one plugin
+const helloWorldGame: HelloWorldGame = new Game({
+	// The sayHelloToPlayers system will say hi for us
+	systemsFolder: ServerScriptService.TS.systems,
+	plugins: {
+		// And the PlayerEntities plugin will create Player components to say hi to
+		playerEntities: PlayerEntities
+	},
+})
+
+helloWorldGame.begin()
 ```
 
 ```ts
-// shared/components.ts
-import { component } from "@rbxts/matter"
-import { Replicated } from "@rbxts/matter-bootstrap"
+// server/systems/sayHelloToPlayers.ts
+import components from "shared/components"
 
-export class Components {
-	@Replicated
-	public static readonly secondsPlayedTimer = 
-		component<{
-			secondsPlayed: number
-		}>("secondsPlayedTimer")
+// Greets new players
+export = function({ world }: HelloWorldGame) {
+	for(const [,playerRecord] of world.queryChanged(components.Player)) {
+		if(playerRecord.new && !playerRecord.old) {
+			// Player has just spawned, greet them!
+			const player = playerRecord.new.instance
+			print(`Hello, ${player.DisplayName} (@${player.Name})`)
+		}
+	}
 }
 ```
