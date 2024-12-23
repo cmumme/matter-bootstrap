@@ -1,4 +1,6 @@
-/node_modules
-/out
-/include
+node_modules/
+out/
+include/
+rbxts-matter-bootstrap*.tgz
+sourcemap.json
 *.tsbuildinfo
