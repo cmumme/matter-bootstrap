@@ -1,7 +1,7 @@
 # @rbxts/matter-bootstrap
-Handles everything to setup Matter. Includes a versatile plugins system to enable any mix of these functions:
+Handles everything to setup [Matter](https://matter-ecs.github.io/matter/). Includes a versatile plugins system to enable any mix of these functions:
 - Hot-reloading
-- Networking (using ``@rbxts/yetanothernet``)
+- Networking (using [@rbxts/yetanothernet](https://yetanotherclown.github.io/YetAnotherNet/))
 - Component replication
 - Matter debugger
 - ...and more! You can create your own plugins as seen in the [example game](examples/hello-world/)
