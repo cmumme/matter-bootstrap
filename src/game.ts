@@ -87,7 +87,7 @@ export abstract class GamePlugin {
  * ```
  * 
  * ```ts
- * // src/systems/sayHelloToPlayers.ts
+ * // src/systems/greetPlayers.ts
  * import Components from "shared/components"
  * 
  * export = function(exampleGame: ExampleGame) {
