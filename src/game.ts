@@ -1,4 +1,3 @@
-import { Loader } from "@rbxts/loader"
 import { Loop, AnySystem, World } from "@rbxts/matter"
 import Object from "@rbxts/object-utils"
 import { RunService } from "@rbxts/services"
@@ -28,9 +27,9 @@ export type GamePluginCtor<T extends GamePlugin = GamePlugin> = new (game: Game<
  */
 export interface GameConfig<T extends { [name: string]: GamePlugin }> {
 	/**
-	 * The folder containing the games systems
+	 * An array containing the games systems
 	 */
-	systemsFolder: Folder
+	systems: AnySystem[]
 	/**
 	 * A table of all plugin constructors to 
 	 * 
@@ -86,7 +85,7 @@ export class Game<T extends { [name: string]: GamePlugin }> {
 	public constructor(
 		private readonly config: GameConfig<T>
 	) {
-		this.systems = Loader.Load(config.systemsFolder)
+		this.systems = config.systems
 		this.loop = new Loop(this)
 
 		this.loadPlugins()

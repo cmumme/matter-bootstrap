@@ -36,7 +36,6 @@
     "yalc": "^1.0.0-pre.53"
   },
   "dependencies": {
-    "@rbxts/loader": "^2.1.1",
     "@rbxts/matter": "npm:@typechecked/matter@0.9.0-beta.0-ts.0",
     "@rbxts/object-utils": "^1.0.4",
     "@rbxts/plasma": "^0.4.5",
