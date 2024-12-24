@@ -1,6 +1,8 @@
 node_modules/
 out/
 include/
+.yalc/
+yalc.lock
 rbxts-matter-bootstrap*.tgz
 sourcemap.json
 *.tsbuildinfo

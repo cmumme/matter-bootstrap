@@ -13,7 +13,8 @@
     "build": "rbxtsc",
     "watch": "rbxtsc -w",
     "prepublishOnly": "yarn run lint && yarn run build",
-    "lint": "yarn eslint ./src"
+    "lint": "yarn eslint ./src",
+    "local-dev": "yalc link && yalc push"
   },
   "types": "out/index.d.ts",
   "files": [
@@ -31,7 +32,8 @@
     "eslint": "^8.27.0",
     "eslint-plugin-roblox-ts": "^0.0.34",
     "roblox-ts": "^2.3.0-dev-576ad98",
-    "typescript": "^5.5.4"
+    "typescript": "^5.5.4",
+    "yalc": "^1.0.0-pre.53"
   },
   "dependencies": {
     "@rbxts/experimental-reflect": "^1.0.0",
