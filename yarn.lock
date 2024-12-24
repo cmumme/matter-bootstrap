@@ -62,42 +62,6 @@
   resolved "https://registry.npmjs.org/@rbxts/compiler-types/-/compiler-types-2.3.0-types.1.tgz"
   integrity sha512-NZWNo+fC4icfJte+NiDSDdWJo1KwzD0MDQ2iBi70YhNYlkA7+Xc+B1udbVqxLJuBur2JxG5bbKrpMAfHqfCtbw==
 
-"@rbxts/cubic-bezier@^1.0.2", "@rbxts/cubic-bezier@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.npmjs.org/@rbxts/cubic-bezier/-/cubic-bezier-1.1.0.tgz"
-  integrity sha512-JzGODd8HpjbmYXZYLkPoSUUbBqrO2NWv+iUaMMugHGS8cEeayVTbRlstvXlRO8IGatisxhGd17mraregBmXJ0A==
-
-"@rbxts/easing-functions@^1.0.0", "@rbxts/easing-functions@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.npmjs.org/@rbxts/easing-functions/-/easing-functions-1.1.0.tgz"
-  integrity sha512-Lt1tKqnDjXLI8mIE/m/aM4AfmaDAOvVGjDRAC8MLoQwadu4+cczv/BDc+2H4vKApWz0GtIeEb4CB/3iejgFw5A==
-  dependencies:
-    "@rbxts/cubic-bezier" "^1.0.2"
-
-"@rbxts/experimental-reflect@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/@rbxts/experimental-reflect/-/experimental-reflect-1.0.0.tgz"
-  integrity sha512-HOcMaP5OxabTn34+skbzb8DkkF3hMhn9Plxu+qJ9yfO5gL1nKyyIbHAk94D1G2brSTEeWXE8T25G64lKuNUaRg==
-
-"@rbxts/gameutil@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.npmjs.org/@rbxts/gameutil/-/gameutil-1.1.1.tgz"
-  integrity sha512-yiNXHDHNi4fo4yZtl5sanAFrdeZjOXIxhTBKqEowH8jciuzMilGpPK2f0b76k+vID+iMa6Y8UjISTMBO+T+fiA==
-  dependencies:
-    "@rbxts/cubic-bezier" "^1.1.0"
-    "@rbxts/easing-functions" "^1.1.0"
-    "@rbxts/object-utils" "^1.0.4"
-    "@rbxts/services" "^1.5.1"
-    "@rbxts/signal" "^1.1.1"
-    "@rbxts/tween" "^1.0.5"
-
-"@rbxts/lerp-functions@^1.0.0":
-  version "1.0.2"
-  resolved "https://registry.npmjs.org/@rbxts/lerp-functions/-/lerp-functions-1.0.2.tgz"
-  integrity sha512-ZNcy/VTyAmCX8Pgc/w4ij6Tf7Ez4e3S44s91cdgQBt347Xkxxu1G2phI/CLJvIXRWNA2hRz8898KBYqq1kXKfA==
-  dependencies:
-    "@rbxts/types" "^1.0.227"
-
 "@rbxts/loader@^2.1.1":
   version "2.1.1"
   resolved "https://registry.npmjs.org/@rbxts/loader/-/loader-2.1.1.tgz"
@@ -118,44 +82,15 @@
   resolved "https://registry.yarnpkg.com/@rbxts/plasma/-/plasma-0.4.5.tgz#690d1b0844febec86d944914181a9e63c6027d35"
   integrity sha512-VtbrO/ZRxnRNDadFth/Y0+3NNxJlYTMhS1qWnbRht4NrAOK0hrk0iwGZJz+aOfKSQ2h/Rbh9DLW3SKy124XqaA==
 
-"@rbxts/rewire@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.npmjs.org/@rbxts/rewire/-/rewire-0.3.0.tgz"
-  integrity sha512-wChhGZ3kEkEsMK9ZuwKpwRsC7OGVZlvxrYMR3beFgCIPXE58JKLziBLkDACmd709XCCEmsMAqv9HMCMhSTD08Q==
-
-"@rbxts/services@^1.5.1", "@rbxts/services@^1.5.4":
+"@rbxts/services@^1.5.4":
   version "1.5.4"
   resolved "https://registry.npmjs.org/@rbxts/services/-/services-1.5.4.tgz"
   integrity sha512-Klh+gRIT8zy3xRTX1YD6FZ9nAMzkzPLTHmciigt59PEF7PJXo31CF0IU0RegQ7VSMrz1iOnXwxbIwy3htcMfOA==
-
-"@rbxts/signal@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.npmjs.org/@rbxts/signal/-/signal-1.1.1.tgz"
-  integrity sha512-WX+ONE+ld4pG9PvRkR8OgDld9NpaV1RfXyUIw+Q2oXP/5rehkYzvt20NWtrLAP3NhMc5inYInLd+hnufey6nFw==
-
-"@rbxts/tween@^1.0.5":
-  version "1.0.5"
-  resolved "https://registry.npmjs.org/@rbxts/tween/-/tween-1.0.5.tgz"
-  integrity sha512-FbkogRa2+DZKdUdr+HV5IjHAzttqacvLEWfhwtqQ53vofXIby1i03vq6cCjv94315mCTOcRaR2/vIj1l95Aftw==
-  dependencies:
-    "@rbxts/cubic-bezier" "^1.0.2"
-    "@rbxts/easing-functions" "^1.0.0"
-    "@rbxts/lerp-functions" "^1.0.0"
-
-"@rbxts/types@^1.0.227":
-  version "1.0.776"
-  resolved "https://registry.npmjs.org/@rbxts/types/-/types-1.0.776.tgz"
-  integrity sha512-LmUYQW19HihJCMBtz6uKDF50X1V6OZHwvMNdgHVzaJz9bhEzBJI1nVLnmytysg/HYDB6TJ+ziaDptsviF2cZcg==
 
 "@rbxts/types@^1.0.791":
   version "1.0.791"
   resolved "https://registry.npmjs.org/@rbxts/types/-/types-1.0.791.tgz"
   integrity sha512-kKivHGm9n12L7AlKUH7KfBI7dJTZaWs21rqTpzhcknn7mqjpkZxcn6RDaIIFl3x7mMnvUsJ5amVL25zd7xkTug==
-
-"@rbxts/yetanothernet@0.10.0-alpha.2":
-  version "0.10.0-alpha.2"
-  resolved "https://registry.npmjs.org/@rbxts/yetanothernet/-/yetanothernet-0.10.0-alpha.2.tgz"
-  integrity sha512-gDy84xJOUG3gnxfLnRfT4fz9BMbqzc5FKuatr0npoFs3yGOcMwAhlSXtxQAI5foqmwH3ezbXv7LpjEcdkXd7zA==
 
 "@roblox-ts/luau-ast@=2.0.0":
   version "2.0.0"
