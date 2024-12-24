@@ -32,12 +32,6 @@ export interface GameConfig<T extends { [name: string]: GamePlugin }> {
 	 */
 	systemsFolder: Folder
 	/**
-	 * A table of all components in the game
-	 * 
-	 * @optional
-	 */
-	componentList?: ComponentList
-	/**
 	 * A table of all plugin constructors to 
 	 * 
 	 * @optional
