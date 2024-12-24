@@ -13,6 +13,8 @@ export default function bootstrap() {
 		plugins: {
 			// And the PlayerEntities plugin will create Player components to say hi to
 			playerEntities: PlayerEntities,
+			// The Matter debugger with default configuration
+			debugger: matterDebuggerFactory({ }),
 		},
 	})
 
