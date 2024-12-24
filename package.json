@@ -14,7 +14,7 @@
     "watch": "rbxtsc -w",
     "prepublishOnly": "yarn run lint && yarn run build",
     "lint": "yarn eslint ./src",
-    "local-dev": "yalc link && yalc push"
+    "local-dev": "yarn prepublishOnly && yalc link && yalc push"
   },
   "types": "out/index.d.ts",
   "files": [
