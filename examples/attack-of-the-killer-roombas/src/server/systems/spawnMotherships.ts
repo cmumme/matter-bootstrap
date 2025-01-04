@@ -65,7 +65,8 @@ export = function({ world }: AttackOfTheKillerRoombas) {
 						lasered: true
 					}),
 					components.Lasering({
-						remainingTime: 1
+						remainingTime: 1,
+						spawned: false
 					})
 				)
 			}
@@ -78,7 +79,7 @@ export = function({ world }: AttackOfTheKillerRoombas) {
 	) {
 		const alignPosition = model.model
 			.FindFirstChild("Roomba")
-			?.FindFirstChildWhichIsA("AlignPosition")
+			?.FindFirstChild("AlignPosition") as BodyPosition | undefined
 		if(!alignPosition) continue
 
 		alignPosition.Position = mothership.goal
