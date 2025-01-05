@@ -19,7 +19,9 @@ export default class PlayerEntities extends GamePlugin {
 			player.CharacterAdded.Connect(character => {
 				this.gameClass.world.insert(
 					playerEntity,
-					components.Transform(),
+					components.Transform({
+						cframe: character.GetPivot()
+					}),
 					components.Target(),
 					components.Model({
 						model: character
