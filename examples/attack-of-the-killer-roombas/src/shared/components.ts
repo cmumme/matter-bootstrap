@@ -1,28 +1,33 @@
 import { component } from "@rbxts/matter"
+import { Replicated } from "@rbxts/matter-bootstrap"
 
-export = {
-	Player: component<{
+export default class {
+	static Player = component<{
 		instance: Player
-	}>("Player"),
-	Target: component("Target"),
-	Roomba: component("Roomba"),
-	Mothership: component<{
+	}>("Player")
+	@Replicated
+	static Target = component("Target")
+	@Replicated
+	static Roomba = component("Roomba")
+	@Replicated
+	static Mothership = component<{
 		goal: Vector3,
 		nextGoal: Vector3,
 		lasered: boolean
-	}>("Mothership"),
-	Transform: component<{
+	}>("Mothership")
+	static Transform = component<{
 		cframe: CFrame,
 		doNotReconcile?: boolean
-	}>("Transform"),
-	Model: component<{
+	}>("Transform")
+	@Replicated
+	static Model = component<{
 		model: Model
-	}>("Model"),
-	Lasering: component<{
+	}>("Model")
+	static Lasering = component<{
 		remainingTime: number,
 		spawned: boolean
-	}>("Lasering"),
-	Charge: component<{
+	}>("Lasering")
+	static Charge = component<{
 		charge: number
 	}>("Charge")
 }
