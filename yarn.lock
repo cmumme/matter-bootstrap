@@ -62,6 +62,11 @@
   resolved "https://registry.npmjs.org/@rbxts/compiler-types/-/compiler-types-2.3.0-types.1.tgz"
   integrity sha512-NZWNo+fC4icfJte+NiDSDdWJo1KwzD0MDQ2iBi70YhNYlkA7+Xc+B1udbVqxLJuBur2JxG5bbKrpMAfHqfCtbw==
 
+"@rbxts/experimental-reflect@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@rbxts/experimental-reflect/-/experimental-reflect-1.0.0.tgz#a633643d07bcbd2337ed855ee35e6cfe50b6d330"
+  integrity sha512-HOcMaP5OxabTn34+skbzb8DkkF3hMhn9Plxu+qJ9yfO5gL1nKyyIbHAk94D1G2brSTEeWXE8T25G64lKuNUaRg==
+
 "@rbxts/matter@npm:@typechecked/matter@0.9.0-beta.0-ts.0":
   version "0.9.0-beta.0-ts.0"
   resolved "https://registry.yarnpkg.com/@typechecked/matter/-/matter-0.9.0-beta.0-ts.0.tgz#88b44f6ecdb727e69508ce0843cac3b119de6986"

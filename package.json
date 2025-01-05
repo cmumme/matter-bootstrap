@@ -36,12 +36,11 @@
     "yalc": "^1.0.0-pre.53"
   },
   "dependencies": {
+    "@rbxts/experimental-reflect": "^1.0.0",
     "@rbxts/matter": "npm:@typechecked/matter@0.9.0-beta.0-ts.0",
     "@rbxts/object-utils": "^1.0.4",
     "@rbxts/plasma": "^0.4.5",
-    "@rbxts/services": "^1.5.4"
-  },
-  "peerDependencies": {
+    "@rbxts/services": "^1.5.4",
     "@rbxts/yetanothernet": "^0.10.0-alpha.2"
   }
 }
