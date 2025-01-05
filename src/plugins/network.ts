@@ -1,6 +1,7 @@
 import Net, { Route } from "@rbxts/yetanothernet"
 import { Game, GamePlugin } from "../game"
 import type { FactorizedPlugin } from "./types"
+import type { Replication } from "./replication"
 
 export type RouteList = Record<string, Route<any>>
 export interface NetworkConfig<Y extends RouteList> {
@@ -21,7 +22,10 @@ export function networkFactory<Y extends RouteList>(config: NetworkConfig<Y>) {
 		}
 
 		public init() {
-			Net.start(this.gameClass.loop, this.routes)
+			// let replication handle init otherwise, it needs to inject some routes
+			if(!(this.gameClass.plugins as {
+				replication?: Replication
+			}).replication) Net.start(this.gameClass.loop, this.routes)
 		}
 
 		public start() { /**/ }
