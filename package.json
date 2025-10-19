@@ -7,7 +7,7 @@
     "email": "me@typechecked.dev",
     "url": "https://typechecked.dev"
   },
-  "repository": "github:cmumme/matter-bootstrap",
+  "repository": "github:camren-m/matter-bootstrap",
   "license": "MIT",
   "scripts": {
     "build": "rbxtsc",
