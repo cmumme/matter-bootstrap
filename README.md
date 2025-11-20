@@ -1,3 +1,5 @@
+**under rework, see [v2-rework](https://github.com/camren-m/matter-bootstrap/tree/v2-rework) branch!**
+
 # @rbxts/matter-bootstrap
 A simple class that handles everything needed to bootstrap a Matter world including hot-reloading, live debug, networking (using ``@rbxts/yetanothernet``), and component replication.
 
