@@ -67,7 +67,7 @@ export default function componentsReplicateSystemFactory(components: Record<stri
 
 					diff[entityStringId] ??= {}
 	
-					if(!world.contains(entityId) && record.new !== undefined) continue
+					if(!world.contains(entityId)) continue
 	
 					diff[entityStringId][componentName] = { data: record.new }
 				}

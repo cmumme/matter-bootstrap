@@ -1,6 +1,6 @@
 {
   "name": "@rbxts/matter-bootstrap",
-  "version": "2.0.0",
+  "version": "2.0.0-beta.0",
   "main": "out/init.lua",
   "author": {
     "name": "typechecked",
@@ -31,8 +31,8 @@
     "@typescript-eslint/parser": "^5.42.1",
     "eslint": "^8.27.0",
     "eslint-plugin-roblox-ts": "^0.0.34",
-    "roblox-ts": "^2.3.0-dev-576ad98",
-    "typescript": "^5.5.4",
+    "roblox-ts": "^3.0.0-dev-9165cde",
+    "typescript": "5.5.3",
     "yalc": "^1.0.0-pre.53"
   },
   "dependencies": {

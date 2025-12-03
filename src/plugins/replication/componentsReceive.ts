@@ -19,7 +19,7 @@ export default function componentsReceiveSystemFactory(components: Record<string
 				for (const [serverEntityId, componentMap] of Object.entries(entities)) {
 					let clientEntityId = entityIdMap.get(serverEntityId)
 
-					if(clientEntityId && !next(componentMap)) { // Entity was despawned on the server, despawn it here as well
+					if(clientEntityId && Object.values(componentMap).size() === 0) { // Entity was despawned on the server, despawn it here as well
 						world.despawn(clientEntityId)
 
 						entityIdMap.delete(serverEntityId)
